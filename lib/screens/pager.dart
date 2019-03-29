@@ -6,23 +6,23 @@ import 'package:flutter/material.dart';
 
 class MenuPager extends StatefulWidget {
   @override
-  _MenuPagerState createState() => new _MenuPagerState();
+  _MenuPagerState createState() => _MenuPagerState();
 }
 
 const double _kViewportFraction = 0.75;
 
 class _MenuPagerState extends State<MenuPager> with TickerProviderStateMixin {
 
-  final PageController _backgroundPageController = new PageController();
-  final PageController _pageController = new PageController(viewportFraction: _kViewportFraction);
-  ValueNotifier<double> selectedIndex = new ValueNotifier<double>(0.0);
+  final PageController _backgroundPageController = PageController();
+  final PageController _pageController = PageController(viewportFraction: _kViewportFraction);
+  ValueNotifier<double> selectedIndex = ValueNotifier<double>(0.0);
 
   AnimationController controller;
 
   @override
   void initState() {
     super.initState();
-    controller = new AnimationController(duration: const Duration(milliseconds: 500), vsync: this);
+    controller = AnimationController(duration: Duration(milliseconds: 500), vsync: this);
   }
 
   @override
@@ -34,14 +34,14 @@ class _MenuPagerState extends State<MenuPager> with TickerProviderStateMixin {
   }
 
   _contentWidget(Aliment aliment, int index, Alignment alignment, double resize) {
-    return new Stack(
+    return Stack(
       children: <Widget>[
-        new Center(
-          child: new Container(
+        Center(
+          child: Container(
             alignment: alignment,
             width: 350.0 * resize,
             height: 600.0 * resize,
-            child: new Stack(
+            child: Stack(
               children: <Widget>[
                 ItemCard(
                   aliment: aliment,
@@ -58,7 +58,7 @@ class _MenuPagerState extends State<MenuPager> with TickerProviderStateMixin {
   Iterable<Widget> _buildPages() {
     final List<Widget> pages = <Widget>[];
     for (int index = 0; index < 5; index++) {
-      var alignment = Alignment.center.add(new Alignment(
+      var alignment = Alignment.center.add(Alignment(
           (selectedIndex.value - index) * _kViewportFraction, 0.0));
       var resizeFactor = (1 -
           (((selectedIndex.value - index).abs() * 0.2).clamp(0.0, 1.0)));
@@ -89,7 +89,7 @@ class _MenuPagerState extends State<MenuPager> with TickerProviderStateMixin {
         Align(
           alignment: Alignment.topCenter,
           child: Padding(
-              padding: const EdgeInsets.only(top: 50.0),
+              padding: EdgeInsets.only(top: 50.0),
               child: Text("HOW TO BURN OFF",
                 style: TextStyle(
                   color: Colors.white,
@@ -102,7 +102,7 @@ class _MenuPagerState extends State<MenuPager> with TickerProviderStateMixin {
         Align(
           alignment: Alignment.bottomCenter,
           child: Padding(
-            padding: const EdgeInsets.only(bottom: 40.0),
+            padding: EdgeInsets.only(bottom: 40.0),
             child: RectangleIndicator(
               _backgroundPageController, Aliments.aliments.length, 3.0, Colors.white54,
               Colors.white,
@@ -130,7 +130,7 @@ class _MenuPagerState extends State<MenuPager> with TickerProviderStateMixin {
             }
             return false;
           },
-          child: new PageView(
+          child: PageView(
             controller: _pageController,
             children: _buildPages(),
           ),

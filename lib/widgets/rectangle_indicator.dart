@@ -42,13 +42,13 @@ class _RectangleIndicatorState extends State<RectangleIndicator>
   _RectangleIndicatorState(
       this.pagerController, this.size, radius, baseColor, selectedColor) {
     pagerController.addListener(animate);
-    List<Container> icons = new List();
+    List<Container> icons = List();
 
     for (int i = 0; i < size; i++) {
-      icons.add(new Container(
-        child: new _AnimatedRectangleAvatar(
-          controller: new AnimationController(
-            duration: new Duration(milliseconds: 100),
+      icons.add(Container(
+        child: _AnimatedRectangleAvatar(
+          controller: AnimationController(
+            duration: Duration(milliseconds: 100),
             vsync: this,
           ),
           baseColor: baseColor,
@@ -60,7 +60,7 @@ class _RectangleIndicatorState extends State<RectangleIndicator>
       ));
     }
 
-    items = new Row(
+    items = Row(
       children: icons,
     );
     getController(items.children.elementAt(0)).forward();
@@ -68,7 +68,7 @@ class _RectangleIndicatorState extends State<RectangleIndicator>
 
   @override
   Widget build(BuildContext context) {
-    return new FittedBox(
+    return FittedBox(
       alignment: FractionalOffset.bottomCenter,
       child: items,
     );
@@ -135,12 +135,12 @@ class _AnimatedRectangleAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Padding selectedRectangle = new Padding(
+    Padding selectedRectangle = Padding(
       padding: EdgeInsets.only(top: 38.0),
       child: Column(
         children: <Widget>[
           Container(
-              decoration: new BoxDecoration(
+              decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
                 color: selectedColor,
               ),
@@ -160,21 +160,21 @@ class _AnimatedRectangleAvatar extends StatelessWidget {
       ),
     );
 
-    return new Column(
+    return Column(
       children: <Widget>[
         Stack(
           alignment: FractionalOffset.center,
           children: <Widget>[
-            new Container(
+            Container(
               width: radius * 20,
               height: radius / 2,
-              decoration: new BoxDecoration(
+              decoration: BoxDecoration(
                 color: baseColor,
                 shape: BoxShape.rectangle,
               ),
             ),
-            new ScaleTransition(
-              scale: new CurvedAnimation(
+            ScaleTransition(
+              scale: CurvedAnimation(
                   parent: controller,
                   curve: Curves.linear,
                   reverseCurve: Curves.bounceOut),

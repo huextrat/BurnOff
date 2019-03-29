@@ -12,9 +12,9 @@ class ItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Center(
-      child: new Padding(
-        padding: const EdgeInsets.only(top: 20.0),
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.only(top: 20.0),
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.0),
@@ -24,7 +24,7 @@ class ItemCard extends StatelessWidget {
             height: MediaQuery.of(context).size.height - 250,
             width: MediaQuery.of(context).size.width - 150,
             child: Container(
-              margin: const EdgeInsets.only(top: 30.0, bottom: 30.0),
+              margin: EdgeInsets.only(top: 30.0, bottom: 30.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
