@@ -4,7 +4,7 @@ BurnOff app in Flutter inspired by a design in [UpLabs](https://www.uplabs.com/p
 
 Uplabs design        |  Flutter rendering
 :-------------------------:|:-------------------------:
-![original-design](./screenshot/uplabs.gif) | ![](./screenshot/flutter_app.jpg)
+![original-design](./screenshots/uplabs.gif) | ![](./screenshots/flutter_app.jpg)
 
 ## Getting Started
 
