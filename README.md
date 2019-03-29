@@ -1,8 +1,6 @@
 ## Burn Off
-
-<h3 align="center">
-  BurnOff app in Flutter inspired by a design in [UpLabs](https://www.uplabs.com/posts/burn-off-calories-mobile-app-concept)
-</h3>
+ 
+BurnOff app in Flutter inspired by a design in [UpLabs](https://www.uplabs.com/posts/burn-off-calories-mobile-app-concept)
 
 Uplabs design        |  Flutter rendering
 :-------------------------:|:-------------------------:
