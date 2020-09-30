@@ -51,6 +51,6 @@ flutter:
         - asset: assets/fonts/dosis/Dosis-SemiBold.otf
           weight: 600
         - asset: assets/fonts/dosis/Dosis-Bold.otf
-          weight: 800
+          weight: 900
         - asset: assets/fonts/dosis/Dosis-ExtraBold.otf
           weight: 900
