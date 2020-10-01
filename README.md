@@ -2,12 +2,12 @@
  
 BurnOff app in Flutter inspired by a design in [UpLabs](https://www.uplabs.com/posts/burn-off-calories-mobile-app-concept)
 
-Plugins used:
+## Plugins used:
 flutter_svg: ^0.13.0+1
 
 Main Widgets used:
-List.generate()
-Stack()
+List.generate(),
+Stack(),
 PageView()
 
 Uplabs design        |  Flutter rendering
